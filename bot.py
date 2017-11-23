@@ -1,5 +1,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
+import settings
+
 logging.basicConfig(format='%(name)s - %(levelname)s - %(massage)s',
 	level = logging.INFO,
 	filename='bot.log'
@@ -16,7 +18,7 @@ def talk_to_me(bot, update):
 		update.message.reply_text(user_text)
 
 def main():
-	updater = Updater('509973304:AAHQBX-5EgWh0yKCwwOf4YkdB-cHonfnBh4')
+	updater = Updater(settings.TELEGRAM_API_KEY)
 	dp = updater.dispatcher
 	dp.add_handler(CommandHandler('start', greet_user))
 	dp.add_handler(MessageHandler(Filters.text, talk_to_me))
