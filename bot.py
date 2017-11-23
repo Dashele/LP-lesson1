@@ -6,7 +6,6 @@ logging.basicConfig(format='%(name)s - %(levelname)s - %(massage)s',
 	level = logging.INFO,
 	filename='bot.log'
 	)
-
 def greet_user(bot, update):
 	text = 'Вызван /start'
 	print(text)
